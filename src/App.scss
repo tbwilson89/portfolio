@@ -1,0 +1,48 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+  height: 80px;
+}
+
+.App-header {
+  background-color: #222;
+  height: 150px;
+  padding: 20px;
+  color: white;
+}
+
+.App-intro {
+  font-size: large;
+}
+
+.top-section-wrapper {
+  height: 250px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  padding-right: 20px;
+  text-align: right;
+  background-image: url('./images/snowsunset.jpeg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  h1 {
+    text-shadow: 1px 1px white,
+    -1px 1px white,
+    1px -1px white,
+    -1px -1px white;
+  }
+  h3 {
+    text-shadow: 1px 1px white,
+    -1px 1px white,
+    1px -1px white,
+    -1px -1px white;
+  }
+}
+
+@keyframes App-logo-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
