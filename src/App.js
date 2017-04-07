@@ -1,13 +1,19 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Title from './top/title'
+import Title from './sections/title'
+import Description from './sections/shortdesc'
+import History from './sections/history'
+import Projects from './sections/projects'
 
 class App extends Component {
   render() {
     return (
       <div className="App">
         <Title />
+        <Description />
+        <History />
+        <Projects />
         <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
@@ -20,4 +26,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default App

@@ -15,20 +15,56 @@
   font-size: large; }
 
 .top-section-wrapper {
-  height: 250px;
+  height: 100%;
+  background-image: url("./images/snowsunset.jpeg");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  text-align: right;
   padding-top: 10px;
   padding-bottom: 20px;
-  padding-right: 20px;
-  text-align: right;
-  background-image: url("./images/snowsunset.jpeg");
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: left top; }
-  .top-section-wrapper h1 {
+  padding-right: 20px; }
+
+.top-content-wrapper {
+  height: 450px; }
+  .top-content-wrapper h1 {
+    height: 250px;
     text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
-  .top-section-wrapper h3 {
+  .top-content-wrapper h3 {
     text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
 
+.desc-wrapper {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: space-between;
+  height: 250px;
+  background-image: url("./images/laptopgrey.jpg");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center center; }
+
+.desc-picture-left {
+  width: 48%; }
+
+.description {
+  width: 48%;
+  margin: 15px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.2); }
+
+.history-wrapper {
+  height: 250px;
+  background-image: url("./images/techmb.jpg");
+  background-attachment: fixed;
+  background-size: 100% 100%;
+  background-repeat: no-repeat; }
+
+@media (max-width: 425px) {
+  .top-section-wrapper {
+    color: red; } }
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg); }
