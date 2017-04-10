@@ -13,11 +13,28 @@
   padding: 20px;
   color: white;
 }
-
 .App-intro {
   font-size: large;
 }
-.top-section-wrapper {
+//***TOP SECTION TITLE AREA***
+@keyframes top-content-animate {
+  0% {
+    filter: grayscale(.7);
+  }
+  25% {
+    filter: grayscale(.4);
+  }
+  50% {
+    filter: grayscale(.3);
+  }
+  75% {
+    filter: grayscale(.4);
+  }
+  100% {
+    filter: grayscale(.7);
+  }
+}
+#top-section-wrapper {
   height: 100%;
   background-image: url('./images/snowsunset.jpeg');
   background-attachment: fixed;
@@ -28,13 +45,24 @@
   padding-top: 10px;
   padding-bottom: 20px;
   padding-right: 20px;
+  animation: top-content-animate 10s infinite;
 }
-.top-content-wrapper {
-  height: 450px;
+.top-section-fade {
 
+
+}
+@keyframes text-expand {
+  0% {
+    font-size: 1em;
+  }
+  100% {
+    font-size: 1.05em;
+  }
+}
+.top-content {
+  height: 250px;
 
   h1 {
-    height: 250px;
     text-shadow: 1px 1px white,
     -1px 1px white,
     1px -1px white,
@@ -46,6 +74,23 @@
     1px -1px white,
     -1px -1px white;
   }
+  span {
+    text-shadow: 1px 1px white,
+    -1px 1px white,
+    1px -1px white,
+    -1px -1px white;
+    margin: 0 2px;
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    a:hover {
+      text-shadow: 1px 1px #e0e5e5,
+      -1px 1px #e0e5e5,
+      1px -1px #e0e5e5,
+      -1px -1px #e0e5e5;
+    }
+  }
 }
 //Description Section
 .desc-wrapper {
@@ -54,6 +99,7 @@
   z-index: 1;
   justify-content: space-between;
   height: 250px;
+  padding: 48px;
   background-image: url('./images/laptopgrey.jpg');
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -78,6 +124,7 @@
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  border-bottom: thick solid #000;
 }
 
 @media (max-width: 425px) {

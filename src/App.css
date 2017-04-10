@@ -14,7 +14,18 @@
 .App-intro {
   font-size: large; }
 
-.top-section-wrapper {
+@keyframes top-content-animate {
+  0% {
+    filter: grayscale(0.7); }
+  25% {
+    filter: grayscale(0.4); }
+  50% {
+    filter: grayscale(0.3); }
+  75% {
+    filter: grayscale(0.4); }
+  100% {
+    filter: grayscale(0.7); } }
+#top-section-wrapper {
   height: 100%;
   background-image: url("./images/snowsunset.jpeg");
   background-attachment: fixed;
@@ -24,15 +35,28 @@
   text-align: right;
   padding-top: 10px;
   padding-bottom: 20px;
-  padding-right: 20px; }
+  padding-right: 20px;
+  animation: top-content-animate 10s infinite; }
 
-.top-content-wrapper {
-  height: 450px; }
-  .top-content-wrapper h1 {
-    height: 250px;
+@keyframes text-expand {
+  0% {
+    font-size: 1em; }
+  100% {
+    font-size: 1.05em; } }
+.top-content {
+  height: 250px; }
+  .top-content h1 {
     text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
-  .top-content-wrapper h3 {
+  .top-content h3 {
     text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
+  .top-content span {
+    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
+    margin: 0 2px; }
+    .top-content span a {
+      text-decoration: none;
+      color: inherit; }
+    .top-content span a:hover {
+      text-shadow: 1px 1px #e0e5e5, -1px 1px #e0e5e5, 1px -1px #e0e5e5, -1px -1px #e0e5e5; }
 
 .desc-wrapper {
   display: flex;
@@ -40,6 +64,7 @@
   z-index: 1;
   justify-content: space-between;
   height: 250px;
+  padding: 48px;
   background-image: url("./images/laptopgrey.jpg");
   background-attachment: fixed;
   background-size: 100% 100%;
@@ -60,7 +85,8 @@
   background-image: url("./images/techmb.jpg");
   background-attachment: fixed;
   background-size: 100% 100%;
-  background-repeat: no-repeat; }
+  background-repeat: no-repeat;
+  border-bottom: thick solid #000; }
 
 @media (max-width: 425px) {
   .top-section-wrapper {

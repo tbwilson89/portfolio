@@ -3,11 +3,11 @@ import React, { Component } from 'react'
 class Description extends Component {
   render() {
     return (
-      <div className='desc-wrapper'>
+      <div className='desc-wrapper description' style={{height: screen.availHeight}}>
         <div className='desc-picture-left'>
         </div>
         <div className='description'>
-          <h3>What is this?</h3>
+          <h3>What is this? Is it working?</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             Aliquam nec nunc ac purus facilisis tempus at consequat ipsum.
             Curabitur vitae fringilla velit. Cras elementum mauris nibh, non
