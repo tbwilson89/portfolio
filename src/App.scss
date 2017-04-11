@@ -16,6 +16,15 @@
 .App-intro {
   font-size: large;
 }
+
+//GLOBAL CHANGES FOR MULTIPLE SECTIONS
+.section-border {
+  border-bottom: thick solid #000a12;
+}
+.resp-break {
+  display: inline;
+}
+
 //***TOP SECTION TITLE AREA***
 @keyframes top-content-animate {
   0% {
@@ -42,10 +51,12 @@
   background-repeat: no-repeat;
   background-position: left top;
   text-align: right;
-  padding-top: 10px;
-  padding-bottom: 20px;
-  padding-right: 20px;
+  padding: 10px 20px 20px 20px;
   animation: top-content-animate 10s infinite;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .top-section-fade {
 
@@ -61,6 +72,7 @@
 }
 .top-content {
   height: 250px;
+
 
   h1 {
     text-shadow: 1px 1px white,
@@ -120,16 +132,39 @@
 //History Section
 .history-wrapper {
   height: 250px;
-  background-image: url('./images/techmb.jpg');
+  background-color: #4f5b62;
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
-  border-bottom: thick solid #000;
+}
+
+//PROJECTS SECTION
+.project-wrapper {
+  background-color: #263238;
+}
+
+//CONTACT SECTION
+.contact-wrapper {
+  background-color: #4f5b62;
+}
+
+//SOCIAL LINKS SECTION
+.social-wrapper {
+  background-color: #263238;
 }
 
 @media (max-width: 425px) {
-  .top-section-wrapper {
-    color: red;
+  #top-section-wrapper {
+    color: inherit;
+  }
+  .desc-picture-left {
+    display: none;
+  }
+  .description {
+    width: 100%;
+  }
+  .resp-break {
+    display: block;
   }
 }
 @keyframes App-logo-spin {

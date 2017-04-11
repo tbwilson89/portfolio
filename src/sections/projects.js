@@ -3,8 +3,8 @@ import React, { Component } from 'react';
 class Projects extends Component {
   render(){
     return(
-      <div id='projects' className='project-wrapper'>
-        <p>Past Projects!</p>
+      <div className='project-wrapper section-border' style={{height: screen.availHeight}}>
+        <span>Past Projects!</span>
       </div>
     )
   }
