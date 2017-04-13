@@ -16,18 +16,18 @@ class Description extends Component {
               Aliquam nec nunc ac purus facilisis tempus at consequat ipsum.
               Curabitur vitae fringilla velit. Cras elementum mauris nibh, non
               luctus felis pretium vitae. Aliquam erat volutpat. Nullam sed
-              turpis lorem. Vestibulum maximus maximus sagittis. Pellentesque
-              nibh leo, vestibulum nec felis a, ornare sodales odio. Morbi eget
-              accumsan augue. Nullam ornare, tellus sed pharetra dapibus, odio
-              sem bibendum justo, vitae egestas ex justo ut massa. Fusce
-              porttitor libero quis est porta dignissim. Nullam facilisis magna
-              sit amet purus viverra pharetra. Fusce finibus felis turpis. Morbi
-              nec eros at ligula eleifend congue.</p>
+              turpis lorem. Vestibulum maximus maximus sagittis.</p>
           </div>
         </div>
-        <div className='about-row'>
+        <div className='about-row-two'>
           <div className='about-box-left'>
-            This is on the left at large screen size.
+            <p>This is on the left at large screen size. Pellentesque
+            nibh leo, vestibulum nec felis a, ornare sodales odio. Morbi eget
+            accumsan augue. Nullam ornare, tellus sed pharetra dapibus, odio
+            sem bibendum justo, vitae egestas ex justo ut massa. Fusce
+            porttitor libero quis est porta dignissim. Nullam facilisis magna
+            sit amet purus viverra pharetra. Fusce finibus felis turpis. Morbi
+            nec eros at ligula eleifend congue.</p>
           </div>
           <div className='about-box-right'>
             <img src={AboutTwo} alt='Abouttwo'></img>

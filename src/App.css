@@ -72,17 +72,20 @@
   background-repeat: no-repeat;
   background-position: center center; }
 
-.about-row {
+.about-row, .about-row-two {
   width: 98%;
   margin: 0;
-  display: inline-block; }
-  .about-row img {
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+  .about-row img, .about-row-two img {
     width: 100%;
     height: auto; }
 
 .about-box-left {
   width: 45%;
   padding: 10px;
+  margin: 10px;
   float: left;
   background-color: rgba(0, 0, 0, 0.2); }
 
@@ -92,15 +95,37 @@
   float: right;
   background-color: rgba(0, 0, 0, 0.2); }
 
-.history-wrapper {
-  height: 250px;
-  background-color: #4f5b62;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  background-repeat: no-repeat; }
-
 .project-wrapper {
   background-color: #4f5b62; }
+
+.projects-tab-wrapper {
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+.project-tab {
+  display: flex;
+  width: 33%;
+  height: 50px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #263238;
+  border: 1px solid black; }
+  .project-tab:hover {
+    cursor: pointer; }
+
+.active-tab {
+  background-color: #4f5b62; }
+
+#fcc-frontend-wrapper {
+  display: inline; }
+
+#fcc-backend-wrapper {
+  display: none; }
+
+#personal-projects-wrapper {
+  display: none; }
 
 .contact-wrapper {
   background-color: #263238; }
@@ -112,6 +137,12 @@
   #top-section-wrapper {
     color: inherit; }
 
+  .about-row {
+    flex-direction: column; }
+
+  .about-row-two {
+    flex-direction: column-reverse; }
+
   .about-box-left {
     float: none;
     width: 98%;
@@ -121,9 +152,6 @@
     float: none;
     width: 98%;
     margin: 5px auto; }
-
-  .description {
-    width: 100%; }
 
   .resp-break {
     display: block; } }
