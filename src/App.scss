@@ -1,9 +1,18 @@
 
 $background-light: #4f5b62;
 $background-dark: #263238;
+$background-main: #000a12;
 
 .App {
   text-align: center;
+  align-content: center;
+  color: white;
+  background-color: $background-main;
+
+}
+.content-wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 .App-logo {
@@ -68,22 +77,22 @@ $background-dark: #263238;
 
 
   h1 {
-    text-shadow: 1px 1px white,
-    -1px 1px white,
-    1px -1px white,
-    -1px -1px white;
+    text-shadow: 1px 1px black,
+    -1px 1px black,
+    1px -1px black,
+    -1px -1px black;
   }
   h3 {
-    text-shadow: 1px 1px white,
-    -1px 1px white,
-    1px -1px white,
-    -1px -1px white;
+    text-shadow: 1px 1px black,
+    -1px 1px black,
+    1px -1px black,
+    -1px -1px black;
   }
   span {
-    text-shadow: 1px 1px white,
-    -1px 1px white,
-    1px -1px white,
-    -1px -1px white;
+    text-shadow: 1px 1px black,
+    -1px 1px black,
+    1px -1px black,
+    -1px -1px black;
     margin: 0 2px;
     a {
       text-decoration: none;
@@ -161,13 +170,25 @@ $background-dark: #263238;
   background-color: $background-light;
 }
 #fcc-frontend-wrapper {
-   display: inline;
+   display: flex;
 }
 #fcc-backend-wrapper {
    display: none;
 }
 #personal-projects-wrapper {
   display: none;
+}
+.portfolio-section {
+  align-items: center;
+  justify-content: center;
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+}
+.portfolio-display-box {
+  width: 30%;
 }
 
 //CONTACT SECTION

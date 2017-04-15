@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import simon from '../images/simon.PNG'
+import tictactoe from '../images/tictactoe.PNG'
+import pomodoro from '../images/pomodoro.PNG'
 
 class Projects extends Component {
 
@@ -50,8 +53,16 @@ class Projects extends Component {
           </div>
         </div>
 
-        <div id='fcc-frontend-wrapper'>
-          This is where Free Code Camp Frontend Projects will be listed.
+        <div id='fcc-frontend-wrapper' className='portfolio-section'>
+          <div className='portfolio-display-box'>
+            <img src={simon} alt='Simon game'></img>
+          </div>
+          <div className='portfolio-display-box'>
+            <img src={tictactoe} alt='tic tac toe'></img>
+          </div>
+          <div className='portfolio-display-box'>
+            <img src={pomodoro} alt='Pomodoro Clock'></img>
+          </div>
         </div>
         <div id='fcc-backend-wrapper'>
           This is where Free Code Camp Backend Projects with be listed.

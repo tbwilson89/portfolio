@@ -1,5 +1,12 @@
 .App {
-  text-align: center; }
+  text-align: center;
+  align-content: center;
+  color: white;
+  background-color: #000a12; }
+
+.content-wrapper {
+  max-width: 1600px;
+  margin: 0 auto; }
 
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
@@ -49,11 +56,11 @@
 .top-content {
   height: 250px; }
   .top-content h1 {
-    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
+    text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black; }
   .top-content h3 {
-    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white; }
+    text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black; }
   .top-content span {
-    text-shadow: 1px 1px white, -1px 1px white, 1px -1px white, -1px -1px white;
+    text-shadow: 1px 1px black, -1px 1px black, 1px -1px black, -1px -1px black;
     margin: 0 2px; }
     .top-content span a {
       text-decoration: none;
@@ -119,13 +126,23 @@
   background-color: #4f5b62; }
 
 #fcc-frontend-wrapper {
-  display: inline; }
+  display: flex; }
 
 #fcc-backend-wrapper {
   display: none; }
 
 #personal-projects-wrapper {
   display: none; }
+
+.portfolio-section {
+  align-items: center;
+  justify-content: center; }
+  .portfolio-section img {
+    width: 100%;
+    height: auto; }
+
+.portfolio-display-box {
+  width: 30%; }
 
 .contact-wrapper {
   background-color: #263238; }
