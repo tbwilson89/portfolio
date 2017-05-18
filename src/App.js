@@ -26,6 +26,9 @@ class App extends Component {
             <SocialLinks />
           </ScrollableAnchor>
         </div>
+        <footer>
+          &copy; TBW 2017
+        </footer>
       </div>
     );
   }
