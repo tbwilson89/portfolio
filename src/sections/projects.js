@@ -16,25 +16,6 @@ class Projects extends Component {
 
   changeActive (newActive) {
     this.setState({selected : newActive})
-    switch(newActive) {
-      case 'frontend':
-        document.getElementById('fcc-frontend-wrapper').style.display = 'inline'
-        document.getElementById('fcc-backend-wrapper').style.display = 'none'
-        document.getElementById('personal-projects-wrapper').style.display = 'none'
-        break;
-      case 'backend':
-        document.getElementById('fcc-frontend-wrapper').style.display = 'none'
-        document.getElementById('fcc-backend-wrapper').style.display = 'inline'
-        document.getElementById('personal-projects-wrapper').style.display = 'none'
-        break;
-      case 'personal':
-        document.getElementById('fcc-frontend-wrapper').style.display = 'none'
-        document.getElementById('fcc-backend-wrapper').style.display = 'none'
-        document.getElementById('personal-projects-wrapper').style.display = 'inline'
-        break;
-      default:
-        break;
-    }
   }
   isActive (val) {
     return 'project-tab ' +((val === this.state.selected) ? 'active-tab':'default')
@@ -92,6 +73,7 @@ class Projects extends Component {
         </div>
       )
     } else if (this.state.selected === 'personal'){
+      console.log('it works!')
       return(
         <div className='project-wrapper section-border'>
           <div className='projects-tab-wrapper'>
@@ -105,8 +87,8 @@ class Projects extends Component {
               Personal Learning Projects
             </div>
           </div>
-        <PersonalProjects />
-      </div>
+          <PersonalProjects />
+        </div>
       )
     } else {
       return(
