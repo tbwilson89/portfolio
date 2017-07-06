@@ -3,37 +3,89 @@ $background-light: #4f5b62;
 $background-dark: #263238;
 $background-main: #000a12;
 
+//Blanket formatting for entire application
 .App {
   text-align: center;
   align-content: center;
+  height: 100vh;
   color: white;
   background-color: $background-main;
-
+  a {
+    text-decoration: none;
+    color: white;
+    &:active, &:hover, &:visited {
+      text-shadow: 0 0 2px black;
+    }
+  }
 }
+
+//Keeps contents of the page within 1600px width when on larger monitors and centers
+.wrapper {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+//Top navigation formating
+.nav-container {
+  height: 5.6vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid black;
+  background-color: $background-light;
+  background: linear-gradient(to bottom, $background-light, $background-dark, $background-light);
+}
+.left-nav-container {
+  height: 100%;
+  width: 25%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+.right-nav-container {
+  height: 100%;
+  width: 75%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: stretch;
+}
+.link-btn {
+  height: 100%;
+  width: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, $background-light, $background-dark, $background-light);
+  box-shadow: 0 0 5px $background-main inset;
+  &:hover {
+    background: linear-gradient(to bottom, $background-dark, $background-light, $background-dark);
+    box-shadow: 0 0 5px $background-main inset;
+  }
+}
+
+
+//Section formating where "pages" change.
+.display-content {
+  height: 94vh;
+}
+
+//Formating for
+.footer {
+  height: 1.5vh;
+  background-color: $background-main;
+  p {
+    margin: 0;
+  }
+}
+
 .content-wrapper {
   max-width: 1600px;
   margin: 0 auto;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
-
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
-.App-intro {
-  font-size: large;
-}
-
 //GLOBAL CHANGES FOR MULTIPLE SECTIONS
-.section-border {
-  border-bottom: thick solid #000a12;
-}
+
 .resp-break {
   display: inline;
 }
@@ -56,15 +108,14 @@ $background-main: #000a12;
     filter: grayscale(.7);
   }
 }
-#top-section-wrapper {
+.top-section-wrapper {
   height: 100%;
+  width: 100%;
   background-image: url('./images/snowsunset.jpeg');
   background-attachment: fixed;
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: left top;
-  text-align: right;
-  padding: 10px 20px 20px 20px;
   animation: top-content-animate 10s infinite;
   text-align: center;
   display: flex;
@@ -72,7 +123,7 @@ $background-main: #000a12;
   justify-content: center;
 }
 
-.top-content {
+.home-content {
   height: 250px;
 
 
@@ -108,20 +159,19 @@ $background-main: #000a12;
 }
 //Description Section
 .about-section-wrapper {
+  height: 100%;
   position: relative;
   z-index: 1;
-  justify-content: space-between;
-  padding: 48px;
-  background-color: #263238;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  background-color: $background-light;
 }
 .about-row, .about-row-two {
-  width: 98%;
   margin: 0;
   display: flex;
+  max-width: 1400px;
   align-items: center;
   justify-content: center;
   img {
@@ -130,14 +180,15 @@ $background-main: #000a12;
   }
 }
 .about-box-left {
-  width: 45%;
+
+  width: 40%;
   padding: 10px;
   margin: 10px;
   float: left;
   background-color: rgba(0,0,0, .2);
 }
 .about-box-right {
-  width: 45%;
+  width: 40%;
   padding: 10px;
   float: right;
   background-color: rgba(0,0,0, .2);
@@ -146,6 +197,19 @@ $background-main: #000a12;
 //PROJECTS SECTION
 .project-wrapper {
   background-color: $background-light;
+  height: 100%;
+  display: flex;
+}
+.projects-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.projects-display {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
 }
 .projects-tab-wrapper {
   display: flex;
@@ -202,19 +266,32 @@ $background-main: #000a12;
 //CONTACT SECTION
 .contact-wrapper {
   background-color: #263238;
+  height: 100%;
 }
 
 //SOCIAL LINKS SECTION
 .social-wrapper {
   background-color: #4f5b62;
+  height: 100%;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 600px) {
   #top-section-wrapper {
     color: inherit;
   }
+  .about-section-wrapper {
+    justify-content: space-around;
+    align-items: stretch;
+    .img-box {
+      display: none;
+    }
+    img {
+      display: none;
+    }
+  }
   .about-row {
     flex-direction: column;
+    align-items: stretch;
   }
   .about-row-two {
     flex-direction: column-reverse;
