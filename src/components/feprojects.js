@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Codepen from 'react-codepen'
 
 const FEProjects = ({ match }) => {

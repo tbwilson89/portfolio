@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 
 class Title extends Component {
 
@@ -10,12 +11,12 @@ class Title extends Component {
           <h3>Web Development</h3>
           <div id='quicklinks'>
             <div className='resp-break'>
-              <span id='wholink' onClick={() => this.props.handleClick('about')}>&lt; About &gt;</span>
-              <span id='projectlink'><a href='#section2' onClick={() => this.props.handleClick('projects')}>&lt; Projects &gt;</a></span>
+              <Link to='/about'><span id='wholink'>&lt; About &gt;</span></Link>
+              <Link to='/projects'><span id='projectlink'>&lt; Projects &gt;</span></Link>
             </div>
             <div className='resp-break'>
-              <span id='contactlink'><a href='#section3' onClick={() => this.props.handleClick('contact')}>&lt; Contact &gt;</a></span>
-              <span id='sociallink'><a href='#section4' onClick={() => this.props.handleClick('social')}>&lt; Social Links &gt;</a></span>
+              <Link to='/contact'><span id='contactlink'>>&lt; Contact &gt;</span></Link>
+              <Link to='/social'><span id='sociallink'>&lt; Social Links &gt;</span></Link>
             </div>
           </div>
         </div>

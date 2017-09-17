@@ -205,6 +205,61 @@ $background-main: #000a12;
   flex-direction: column;
   justify-content: center;
 }
+.btn {
+	border: none;
+	font-family: inherit;
+	font-size: inherit;
+	color: inherit;
+	background: none;
+	cursor: pointer;
+	padding: 25px 80px;
+	display: inline-block;
+	margin: 15px 30px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-weight: 700;
+	outline: none;
+	position: relative;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+}
+.btn:after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  transition: all 0.3s;
+}
+.perspective {
+  perspective: 800px;
+  display: inline-block;
+}
+.project-link-btn {
+  display: block;
+  background: #5cbcf6;
+  transform-style: preserve-3d;
+}
+.project-link-btn:after {
+  width: 21%;
+  height: 100%;
+  left: -20%;
+  top: 0;
+  background: #49a7df;
+  -webkit-transform-origin: 100% 0%;
+	-webkit-transform: rotateY(-90deg);
+	-moz-transform-origin: 100% 0%;
+	-moz-transform: rotateY(-90deg);
+	-ms-transform-origin: 100% 0%;
+	-ms-transform: rotateY(-90deg);
+  transform-origin: 100% 0%;
+  transform: rotateY(-90deg);
+}
+.project-link-btn:hover {
+  -webkit-transform: rotateY(15deg);
+  -moz-transform: rotateY(15deg);
+  -ms-transform: rotateY(15deg);
+  transform: rotateY(15deg);
+}
 .projects-display {
   display: flex;
   justify-content: center;
