@@ -6,6 +6,7 @@ import About from './components/about'
 import Projects from './components/projects'
 import Contact from './components/contact'
 import Social from './components/social'
+import LandGame from './landgame/gameboard'
 
 export default class Redirects extends Component {
   render(){
@@ -21,6 +22,7 @@ export default class Redirects extends Component {
                 <Link to='/about'><div className='link-btn'>About</div></Link>
                 <Link to='/projects'><div className='link-btn'>Projects</div></Link>
                 <Link to='/contact'><div className='link-btn'>Contact</div></Link>
+                <Link to='/landgame'><div className='link-btn'>Land Game</div></Link>
                 <Link to='/social'><div className='link-btn'>Social Media</div></Link>
               </div>
             </div>
@@ -30,6 +32,7 @@ export default class Redirects extends Component {
               <Route path='/projects' component={Projects}/>
               <Route path='/contact' component={Contact}/>
               <Route path='/social' component={Social}/>
+              <Route path='/landgame' component={LandGame}/>
             </div>
           </div>
         </div>

@@ -1,0 +1,66 @@
+.land-game {
+  display: flex;
+  flex-direction: row;
+}
+
+#timer {
+  width: inherit;
+  margin: 10px;
+  height: 30px;
+  background-color: black;
+}
+#progress {
+  width: 1%;
+  height: 30px;
+  background-color: white;
+}
+
+.game-buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.game-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 100px;
+}
+.left-game-info {
+  display: flex;
+}
+
+.game-board {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.board-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.tile {
+  height: 100px;
+  width: 100px;
+  background-color: blue;
+  margin: 5px;
+}
+
+/* TILE DIFFERENCES BASED ON TYPE */
+
+.empty {
+  background-color: grey;
+}
+.forest {
+  background-color: green;
+}
+.plains {
+  background-color: yellow;
+}
+.mountain {
+  background-color: white;
+}

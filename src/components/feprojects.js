@@ -33,42 +33,12 @@ const FEProjects = ({ match }) => {
   }
   return(
     <div id='fcc-frontend-wrapper' className='portfolio-section'>
-      <div>
-        {match.params.projectId}
+      <div className='fe-project-links'>
+        {links}
       </div>
-      {links}
-      {routes}
-      {/* <Route path={`${match.url}/Simon`} component={Simon}/> */}
-      {/* <div className='portfolio-display-row'>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="mRmrJx"></Codepen>
-        </div>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="dNXdwJ"></Codepen>
-        </div>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="xgxqYz"></Codepen>
-        </div>
+      <div className='fe-project-display'>
+        {routes}
       </div>
-      <div className='portfolio-display-row'>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="xRmBEx"></Codepen>
-        </div>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="YpRGjM"></Codepen>
-        </div>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="apGrwR"></Codepen>
-        </div>
-      </div>
-      <div className='portfolio-display-row'>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="bBmKOK"></Codepen>
-        </div>
-        <div className='portfolio-display-box'>
-          <Codepen user="tbwilson89" hash="ZBVXNm"></Codepen>
-        </div>
-      </div> */}
     </div>
   )
 }

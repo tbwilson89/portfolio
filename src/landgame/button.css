@@ -1,0 +1,9 @@
+.game-btn {
+  margin: 10px 10px;
+  cursor: pointer;
+  user-select: none;
+  text-transform: uppercase;
+  padding: 25px 70px;
+  width: 100px;
+  background-color: purple;
+}
