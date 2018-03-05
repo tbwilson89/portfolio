@@ -12,9 +12,9 @@ const Projects = ({ match }) => {
   return (
     <div className='project-wrapper'>
       <div className='projects-nav'>
-        <Link to={`${match.url}/frontend`}><p className='perspective'><div className='btn project-link-btn'>Front End Projects</div></p></Link>
-        <Link to={`${match.url}/backend`}><p className='perspective'><div className='btn project-link-btn'>Back End Projects</div></p></Link>
-        <Link to={`${match.url}/personal`}><p className='perspective'><div className='btn project-link-btn'>Personal Projects</div></p></Link>
+        <Link to={`${match.url}/frontend`}><div className='btn project-link-btn'><p className='perspective'>Front End Projects</p></div></Link>
+        <Link to={`${match.url}/backend`}><div className='btn project-link-btn'><p className='perspective'>Back End Projects</p></div></Link>
+        <Link to={`${match.url}/personal`}><div className='btn project-link-btn'><p className='perspective'>Personal Projects</p></div></Link>
       </div>
       <div className='projects-display'>
         <Route path={`${match.url}/frontend`} component={Frontend}/>

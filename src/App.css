@@ -47,12 +47,9 @@ p {
   width: 120px;
   display: flex;
   justify-content: center;
-  align-items: center;
-  background: linear-gradient(to bottom, #4f5b62, #263238, #4f5b62);
-  box-shadow: 0 0 5px #000a12 inset; }
+  align-items: center; }
   .link-btn:hover {
-    background: linear-gradient(to bottom, #263238, #4f5b62, #263238);
-    box-shadow: 0 0 5px #000a12 inset; }
+    color: beige; }
 
 .display-content {
   height: 94vh; }

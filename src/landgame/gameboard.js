@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Button from './button'
+import Resources from './components/resources'
 
 import './gameboard.css'
 
@@ -21,13 +22,47 @@ export default class Gameboard extends Component {
         mountain: 0,
         lake: 2
       },
+      landInfo: {
+        plains: {
+          cost: 0,
+          req: {},
+          yield: 1,
+          cd: 5
+        },
+        forest: {
+          cost: 1,
+          req: {
+            plains: 1
+          },
+          yield: 1,
+          cd: 5
+        },
+        mountain: {
+          cost: 3,
+          req: {
+            forest: 3,
+            lake: 1
+          },
+          yield: 1,
+          cd: 5
+        },
+        lake: {
+          cost: 2,
+          req: {
+            forest: 2,
+            plains: 2
+          },
+          yield: 1,
+          cd: 5
+        }
+      },
       boardRows: 7,
       boardCol: 10,
       placeTile: 'plains',
       paused: false,
       intervalId: '',
       timer: 10,
-      roundTime: 10
+      roundTime: 48
     }
     this.boardSetup = this.boardSetup.bind(this)
     this.setTile = this.setTile.bind(this)
@@ -36,10 +71,20 @@ export default class Gameboard extends Component {
     this.pause = this.pause.bind(this)
     this.setupInterval = this.setupInterval.bind(this)
     this.timer = this.timer.bind(this)
+    this.resetBoard = this.resetBoard.bind(this)
+    this.testFunction = this.testFunction.bind(this)
   }
   componentDidMount(){
+    this.resetBoard()
+  }
+  componentWillUnmount(){
+    clearInterval(this.state.intervalId)
+  }
+  resetBoard(){
+    clearInterval(this.state.intervalId)
     this.boardSetup(this.state.boardRows, this.state.boardCol)
     this.setupInterval()
+    this.setState({timer: this.state.roundTime})
   }
   setupInterval(){
     let intervalId = setInterval(this.timer, 1000)
@@ -122,6 +167,10 @@ export default class Gameboard extends Component {
     })
   }
 
+  testFunction(){
+    let infoCopy = JSON.parse(JSON.stringify(this.state.landInfo))
+    console.log(infoCopy)
+  }
 
 
   render(){
@@ -136,25 +185,26 @@ export default class Gameboard extends Component {
         </div>
       )
     })
-
-    let resources = `
-      ${this.state.playerResources.forest > 0 ? `Forest: ${this.state.playerResources.forest}` : ''}
-      ${this.state.playerResources.plains > 0 ? `Plains: ${this.state.playerResources.plains}` : ''}
-      ${this.state.playerResources.mountain > 0 ? `Mountain: ${this.state.playerResources.mountain}` : ''}
-      ${this.state.playerResources.lake > 0 ? `Lake: ${this.state.playerResources.lake}` : ''}
-      `
     return(
       <div className='land-game'>
         <div className='game-buttons'>
           Timer: <div id='timer'><div id='progress' style={{width: (this.state.timer / this.state.roundTime) * 100 +'%'}}></div></div>
-          <Button type='plains' handleClick={this.setTile} curSel={this.state.placeTile}/>
+          <Button type='plains' handleClick={this.setTile} curSel={this.state.placeTile} />
           {this.state.tileTypes.plains > 0 ? <Button type='forest' handleClick={this.setTile} curSel={this.state.placeTile}/> : null}
           <button onClick={this.pause}>{this.state.paused ? 'Resume':'Pause'}</button>
+          <button onClick={this.resetBoard}>Reset</button>
+          <hr/>
+          <button onClick={this.testFunction}>TEST ALL THE THINGS</button>
         </div>
         <div className='play-space'>
           <div className='game-info'>
             <h1>Land Game!</h1>
-            <span>{resources}</span>
+            <Resources
+              plains={this.state.playerResources.plains}
+              forest={this.state.playerResources.forest}
+              mountain={this.state.playerResources.mountain}
+              lake={this.state.playerResources.lake}
+            />
           </div>
 
           <div className='game-board'>

@@ -61,11 +61,14 @@ p {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, $background-light, $background-dark, $background-light);
-  box-shadow: 0 0 5px $background-main inset;
+  // background: linear-gradient(to bottom, $background-light, $background-dark, $background-light);
+  // box-shadow: 0 0 5px $background-main inset;
+  // &:hover {
+  //   background: linear-gradient(to bottom, $background-dark, $background-light, $background-dark);
+  //   box-shadow: 0 0 5px $background-main inset;
+  // }
   &:hover {
-    background: linear-gradient(to bottom, $background-dark, $background-light, $background-dark);
-    box-shadow: 0 0 5px $background-main inset;
+    color: beige;
   }
 }
 
@@ -185,7 +188,6 @@ p {
   }
 }
 .about-box-left {
-
   width: 40%;
   padding: 10px;
   margin: 10px;
