@@ -1,4 +1,6 @@
 .game-btn {
+  width: inherit;
+  height: auto;
   margin: 10px 10px;
   cursor: pointer;
   user-select: none;
@@ -6,4 +8,12 @@
   padding: 25px 70px;
   width: 100px;
   background-color: purple;
+}
+#btn-progress {
+  width: 1%;
+  height: 50px;
+  background-color: red;
+}
+.btn-text {
+  position: relative;
 }

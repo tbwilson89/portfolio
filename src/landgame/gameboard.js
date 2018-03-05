@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-import Button from './button'
+import Button from './components/button'
 import Resources from './components/resources'
 
 import './gameboard.css'
@@ -24,12 +24,14 @@ export default class Gameboard extends Component {
       },
       landInfo: {
         plains: {
+          name: 'plains',
           cost: 0,
           req: {},
           yield: 1,
           cd: 5
         },
         forest: {
+          name: 'forest',
           cost: 1,
           req: {
             plains: 1
@@ -38,6 +40,7 @@ export default class Gameboard extends Component {
           cd: 5
         },
         mountain: {
+          name: 'mountain',
           cost: 3,
           req: {
             forest: 3,
@@ -47,6 +50,7 @@ export default class Gameboard extends Component {
           cd: 5
         },
         lake: {
+          name: 'lake',
           cost: 2,
           req: {
             forest: 2,
@@ -188,9 +192,19 @@ export default class Gameboard extends Component {
     return(
       <div className='land-game'>
         <div className='game-buttons'>
-          Timer: <div id='timer'><div id='progress' style={{width: (this.state.timer / this.state.roundTime) * 100 +'%'}}></div></div>
-          <Button type='plains' handleClick={this.setTile} curSel={this.state.placeTile} />
-          {this.state.tileTypes.plains > 0 ? <Button type='forest' handleClick={this.setTile} curSel={this.state.placeTile}/> : null}
+          Timer: <div id='timer'>
+            <div id='progress' style={{width: (this.state.timer / this.state.roundTime) * 100 +'%'}}></div>
+          </div>
+          <Button
+            type={this.state.landInfo.plains}
+            handleClick={this.setTile}
+            curSel={this.state.placeTile}
+          />
+          {this.state.tileTypes.plains > 0 ?
+            <Button
+              type={this.state.landInfo.forest}
+              handleClick={this.setTile}
+              curSel={this.state.placeTile}/> : null}
           <button onClick={this.pause}>{this.state.paused ? 'Resume':'Pause'}</button>
           <button onClick={this.resetBoard}>Reset</button>
           <hr/>
