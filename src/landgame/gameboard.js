@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 import Button from './components/button'
+import SideMenu from './components/sidemenu'
 import Resources from './components/resources'
 import {landInfo} from './data/landinfo'
 
@@ -12,10 +13,10 @@ export default class Gameboard extends Component {
     this.state = {
       board: [],
       playerResources: {
-        forest: 2,
-        plains: 2,
-        mountain: 0,
-        lake: 1
+        forest: 5,
+        plains: 5,
+        mountain: 5,
+        lake: 5
       },
       tileTypes: {
         forest: 0,
@@ -26,7 +27,7 @@ export default class Gameboard extends Component {
       landInfo: landInfo,
       boardRows: 7,
       boardCol: 10,
-      placeTile: 'plains',
+      placeTile: '',
       paused: false,
       intervalId: '',
       timer: 10,
@@ -53,8 +54,7 @@ export default class Gameboard extends Component {
   resetBoard(){
     clearInterval(this.state.intervalId)
     this.boardSetup(this.state.boardRows, this.state.boardCol)
-    // this.setupInterval()
-    this.createLandButtons()
+    this.setupInterval()
     this.setState({
       timer: this.state.roundTime,
     })
@@ -116,6 +116,7 @@ export default class Gameboard extends Component {
     })
   }
   setTile(type){
+    console.log(type)
     this.setState({placeTile: type})
   }
   adjustTile(e){
@@ -188,19 +189,20 @@ export default class Gameboard extends Component {
         </div>
       )
     })
-    let landButtons = this.createLandButtons(this.state.landInfo)
     return(
       <div className='land-game'>
-        <div className='game-buttons'>
-          Timer: <div id='timer'>
-            <div id='progress' style={{width: (this.state.timer / this.state.roundTime) * 100 +'%'}}></div>
-          </div>
-          {landButtons}
-          <button onClick={this.pause}>{this.state.paused ? 'Resume':'Pause'}</button>
-          <button onClick={this.resetBoard}>Reset</button>
-          <hr/>
-          <button onClick={this.testFunction}>TEST ALL THE THINGS</button>
-        </div>
+        <SideMenu
+          data={this.state.landInfo}
+          tileTypes={this.state.tileTypes}
+          timer={this.state.timer}
+          roundTime={this.state.roundTime}
+          paused={this.state.paused}
+          onPause={this.pause}
+          onReset={this.resetBoard}
+          onSetTile={this.setTile}
+          onTest={this.testFunction}
+          curSel={this.state.placeTile}
+        />
         <div className='play-space'>
           <div className='game-info'>
             <h1>Land Game!</h1>

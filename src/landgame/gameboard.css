@@ -2,6 +2,10 @@
   display: flex;
   flex-direction: row;
 }
+.game-buttons {
+  background-color: #263538;
+  margin: 25px 0;
+}
 
 #timer {
   width: inherit;
