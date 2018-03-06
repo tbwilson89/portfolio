@@ -15,11 +15,8 @@ export default class SideMenu extends Component {
       //Keys are each land that has an object in data
       for(let type in data[key].req){
         //Each type is something that has a requirement for this button to appear
-        console.log(`PRes ${type}: ${this.props.tileTypes[type]} Req ${data[key].req[type]}`)
         if(this.props.tileTypes[type] >= data[key].req[type]){
-          console.log('TRUE!')
         } else {
-          console.log(data[key].name)
           makeButton = false;
         }
       }
@@ -35,7 +32,6 @@ export default class SideMenu extends Component {
       }
       makeButton = true
     }
-    console.log(buttons)
     return buttons
   }
 
