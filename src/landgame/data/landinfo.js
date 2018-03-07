@@ -1,6 +1,6 @@
 export var landInfo = {
-  plains: {
-    name: 'plains',
+  field: {
+    name: 'field',
     cost: 0,
     req: {},
     yield: 1,
@@ -10,7 +10,7 @@ export var landInfo = {
     name: 'forest',
     cost: 1,
     req: {
-      plains: 1
+      field: 1
     },
     yield: 1,
     cd: 5
@@ -30,7 +30,7 @@ export var landInfo = {
     cost: 2,
     req: {
       forest: 2,
-      plains: 2
+      field: 2
     },
     yield: 1,
     cd: 5

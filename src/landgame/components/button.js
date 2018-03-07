@@ -35,7 +35,7 @@ export default class Button extends Component {
   }
   render(){
     let bgColor = this.props.curSel === this.props.type.name ? 'green':'purple'
-    
+
     return(
       <div
         className='game-btn'

@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 
-import Button from './components/button'
 import SideMenu from './components/sidemenu'
 import Resources from './components/resources'
 import {landInfo} from './data/landinfo'
@@ -14,13 +13,13 @@ export default class Gameboard extends Component {
       board: [],
       playerResources: {
         forest: 5,
-        plains: 5,
+        field: 5,
         mountain: 5,
         lake: 5
       },
       tileTypes: {
         forest: 0,
-        plains: 0,
+        field: 0,
         mountain: 0,
         lake: 2
       },
@@ -42,11 +41,32 @@ export default class Gameboard extends Component {
     this.timer = this.timer.bind(this)
     this.resetBoard = this.resetBoard.bind(this)
     this.testFunction = this.testFunction.bind(this)
-    this.createLandButtons = this.createLandButtons.bind(this)
+    this.onKeyPress = this.onKeyPress.bind(this)
   }
   componentDidMount(){
     this.resetBoard()
     console.log(landInfo)
+    document.addEventListener('keydown', (event)=>{
+      const keyName = event.key
+      console.log(keyName)
+      switch (keyName){
+        case 'ff':
+          this.setTile('field')
+          break;
+        case 't':
+          this.setTile('forest')
+          break;
+        case 'm':
+          this.setTile('mountain')
+          break;
+        case 'l':
+          this.setTile('lake')
+          break;
+        default:
+          break;
+      }
+      this.onKeyPress(keyName)
+    })
   }
   componentWillUnmount(){
     clearInterval(this.state.intervalId)
@@ -58,37 +78,6 @@ export default class Gameboard extends Component {
     this.setState({
       timer: this.state.roundTime,
     })
-  }
-
-  createLandButtons(data){
-    //data = this.state.landInfo (contains objects for each land)
-    let buttons = []
-    let makeButton = true;
-    for(let key in data){
-      //Keys are each land that has an object in data
-      for(let type in data[key].req){
-        //Each type is something that has a requirement for this button to appear
-        console.log(`PRes ${type}: ${this.state.tileTypes[type]} Req ${data[key].req[type]}`)
-        if(this.state.tileTypes[type] >= data[key].req[type]){
-          console.log('TRUE!')
-        } else {
-          console.log(data[key].name)
-          makeButton = false;
-        }
-      }
-      if(makeButton){
-        let newButton =
-        <Button
-          type={data[key]}
-          handleClick={this.setTile}
-          curSel={this.state.placeTile}
-        />
-        buttons.push(newButton)
-      }
-      makeButton = true
-    }
-    console.log(buttons)
-    return buttons
   }
 
   setupInterval(){
@@ -175,7 +164,11 @@ export default class Gameboard extends Component {
     console.log(infoCopy)
     console.log(this.state.landInfo)
   }
-
+  onKeyPress(key){
+    if(key === 'p'){
+      this.setTile('field')
+    }
+  }
 
   render(){
     let spaces = this.state.board.map((row, i)=>{
@@ -189,6 +182,7 @@ export default class Gameboard extends Component {
         </div>
       )
     })
+
     return(
       <div className='land-game'>
         <SideMenu
@@ -207,7 +201,7 @@ export default class Gameboard extends Component {
           <div className='game-info'>
             <h1>Land Game!</h1>
             <Resources
-              plains={this.state.playerResources.plains}
+              field={this.state.playerResources.field}
               forest={this.state.playerResources.forest}
               mountain={this.state.playerResources.mountain}
               lake={this.state.playerResources.lake}
