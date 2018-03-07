@@ -26,10 +26,11 @@ const projects = [
 const FEProjects = ({ match }) => {
   const links = []
   const routes = []
-  console.log(projects[0].comp)
   for(let i=0;i<projects.length;i++){
-    links.push(<Link to={`${match.url}/${projects[i].url}`}>{projects[i].url}</Link>)
-    routes.push(<Route path={`${match.url}/${projects[i].url}`} component={projects[i].comp}/>)
+    links.push(<Link to={`${match.url}/${projects[i].url}`} key={projects[i].url}>
+      <div className='fe-links'>{projects[i].url}</div>
+    </Link>)
+    routes.push(<Route path={`${match.url}/${projects[i].url}`} component={projects[i].comp} key={projects[i].url}/>)
   }
   return(
     <div id='fcc-frontend-wrapper' className='portfolio-section'>
